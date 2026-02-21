@@ -219,7 +219,7 @@ def main():
                 with st.spinner("Performing analysis..."):
                     st.session_state.summary = summary(analysis)
             
-            # Display summary in a styled container
+            # Display summary
             st.markdown("### 📋 Analysis Report")
             st.text_area("", st.session_state.summary, height=500)
             
@@ -230,8 +230,7 @@ def main():
             col2.metric("Columns", analysis['shape'][1])
             col3.metric("Numeric", len(analysis['numeric_cols']))
             col4.metric("Categorical", len(analysis['categorical_cols']))
-        
-        # Tab 3: Visualizations
+   
         # Tab 3: Visualizations
         with tab3:
             st.subheader("Interactive Visualization Studio")
@@ -245,17 +244,17 @@ def main():
                 "Scatter Plots": "Show relationships between two numeric variables"
             }
             
-            # Initialize selected_charts properly
+            # Initialize selected_charts
             selected_charts = []
             for chart, description in chart_options.items():
                 if st.checkbox(chart, value=True, help=description):
                     selected_charts.append(chart)
             
-            # Store selected charts in session state for persistence
+            # Stores selected charts in session state
             st.session_state.charts_selected = selected_charts
             
             # Generate visualizations button
-            if st.button("🎨 Generate Selected Charts"):
+            if st.button("Generate Selected Charts"):
                 if not selected_charts:
                     st.warning("Please select at least one chart type")
                 else:
@@ -309,7 +308,7 @@ def main():
                         st.markdown("### Scatter Plot Generator")
                         numeric_cols = analysis['numeric_cols']
                         
-                        # Use session state to store scatter plot selections
+                        # Uses session state to store scatter plot selections
                         if 'x_col' not in st.session_state:
                             st.session_state.x_col = numeric_cols[0] if numeric_cols else None
                         if 'y_col' not in st.session_state:
@@ -382,3 +381,4 @@ if __name__ == "__main__":
 #__name__ is a builtin var which stores name of modeule being executed.
 #When done streamlit run app.py, name stores main, becoz, this file is the main entry of execution
 #If app.py is called in another call, name stores the value app
+
