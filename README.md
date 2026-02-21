@@ -1,7 +1,7 @@
 # Data-Analyzer-Visualizer-Tool
 This is an interactive data analysis web application built using Python and Streamlit. It allows users to upload any CSV dataset and instantly generate automated summaries, visualizations, and statistical insights. The goal of this project is to make exploratory data analysis (EDA) simple, interactive, and accessible.
 
-Features:
+**Features:**
   * Upload any CSV dataset
   * Interactive full dataset viewer
   * Automated summary report
@@ -12,7 +12,7 @@ Features:
   * Detailed column-level statistics
   * Download processed dataset
 
-This project showcases:
+**This project showcases:**
   * Data analysis using Pandas
   * Exploratory Data Analysis (EDA)
   * Data assessment
@@ -20,7 +20,7 @@ This project showcases:
   * Matplotlib-based visualizations
   * Python architecture and functions
   
-Tech Stack:
+**Tech Stack:**
   * Python
   * Streamlit
   * Pandas
